@@ -1,15 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> services</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .accordion {
+            background-color: #eee;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+
+        .panel {
+            display: none;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+    </style>
 </head>
+
 <body>
+    <!-- Header section with logo and navigation -->
     <header>
         <img src="_images/Elegant Woodworking Logo with Craft Tools (1).png" alt="Wood Craft Solution Logo">
         <nav id="toplinks">
+            <!-- Navigation menu -->
             <ul>
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="about.html">About</a></li>
@@ -21,24 +43,79 @@
             </ul>
         </nav>
     </header>
-
+    <!--  Services offered by the business  -->
     <main id="service">
-        <div>
-            <h1>What We Do</h1>
-            <p>At Woodcraft Solutions, we are committed to providing premium, customized options for your residence. Whether you require a tailored furniture item, skilled wood restoration, or a full renovation, our work is guided by craftsmanship, meticulous attention to detail, and more than 15 years of practical experience. </p>
-            <h1>Design and Construction of Furniture</h1>
-            <p>Looking for something unavailable in a shop? We create and construct customized furniture items that combine practicality with aesthetics. Whether it's a dining table, media console, or unique accent item, we design furniture that seamlessly integrates into your home. </p>
-            <h1>Repairs at Home</h1>
-            <p>Deteriorated woodwork, frayed fixtures, or old cabinetry? We provide expert repair services to rejuvenate the appearance and functionality of your home's wooden features—saving you time, money, and hassle. </p>
-            <h1>Total Home Makeovers</h1>
-            <p>Want to change your whole house? Our comprehensive renovation services encompass all aspects from design and planning to implementation. We oversee the complete procedure, making certain that each detail is addressed thoughtfully and designed for durability. </p>
-            <h1>Custom, Premium Finishes</h1>
-            <p>Every project demonstrates our dedication to quality workmanship. We utilize premium materials and finishes to guarantee that your custom items and renovations not only appear stunning—but endure over time </p>
-            <h1>Custom woodworking</h1>
-            <p>We craft distinctive wooden items tailored to fit your environment and way of living. With tailored cabinetry and shelving, along with accent walls and decorative wooden features, we transform your concepts into reality with accuracy and flair. </p>
+        <h1>Our Services</h1>
+        <input type="text" id="searchInput" placeholder="Search services..."
+            style="width:100%; padding:8px; margin-bottom:20px;">
+
+        <button class="accordion">Design and Construction of Furniture</button>
+        <div class="panel">
+            <p>We create customized furniture that blends practicality with aesthetics, tailored to your space.</p>
         </div>
-        
+
+        <button class="accordion">Repairs at Home</button>
+        <div class="panel">
+            <p>We restore damaged woodwork, fixtures, and cabinetry to enhance your home's beauty and function.</p>
+        </div>
+
+        <button class="accordion">Total Home Makeovers</button>
+        <div class="panel">
+            <p>From design to execution, we manage full renovations with attention to detail and durability.</p>
+        </div>
+
+        <button class="accordion">Custom, Premium Finishes</button>
+        <div class="panel">
+            <p>We use high-end materials and finishes to ensure your projects are both stunning and long-lasting.</p>
+        </div>
+
+        <button class="accordion">Custom Woodworking</button>
+        <div class="panel">
+            <p>We craft unique wooden features like shelving, cabinetry, and accent walls to fit your lifestyle.</p>
+        </div>
+
         <br class="clearFix">
     </main>
+    <footer>
+        <p>Explore our services and discover how Woodcraft Solutions can transform your space.</p>
+        <nav>
+            <!-- Navigation menu -->
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="currentPage">Services</li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="quote.html">Quote</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </footer>
+     <script>
+    // Accordion toggle
+    document.querySelectorAll(".accordion").forEach(button => {
+      button.addEventListener("click", () => {
+        button.classList.toggle("active");
+        const panel = button.nextElementSibling;
+        panel.style.display = panel.style.display === "block" ? "none" : "block";
+      });
+    });
+
+    // Search filter
+    document.getElementById("searchInput").addEventListener("keyup", function () {
+      const filter = this.value.toLowerCase();
+      document.querySelectorAll(".accordion").forEach((btn, index) => {
+        const panel = btn.nextElementSibling;
+        const text = panel.textContent.toLowerCase();
+        const title = btn.textContent.toLowerCase();
+        const match = title.includes(filter) || text.includes(filter);
+        btn.style.display = match ? "" : "none";
+        panel.style.display = match && btn.classList.contains("active") ? "block" : "none";
+      });
+    });
+  </script>
+
+    
 </body>
+
 </html>

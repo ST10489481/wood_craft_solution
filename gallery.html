@@ -1,15 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Lightbox CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
+
+    <!-- Optional: Fade-in animation styles -->
+    <style>
+        .gallery-image {
+            width: 100%;
+            max-width: 300px;
+            margin: 10px;
+            opacity: 0;
+            transition: opacity 0.8s ease-in;
+        }
+
+        .gallery-image.visible {
+            opacity: 1;
+        }
+
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        #searchInput {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            font-size: 1em;
+        }
+    </style>
 </head>
+
 <body>
+    <!-- Header section with logo and navigation -->
     <header>
         <img src="_images/Elegant Woodworking Logo with Craft Tools (1).png" alt="Wood Craft Solution Logo">
         <nav id="toplinks">
+            <!-- Navigation menu -->
             <ul>
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="about.html">About</a></li>
@@ -21,14 +55,75 @@
             </ul>
         </nav>
     </header>
+    <!-- Collection of project images -->
+    <h1>Project Gallery</h1>
+    <input type="text" id="searchInput" placeholder="Search gallery..." />
 
-    <main>
-        <img src="_images/DIY-Wood-Home-Decor-16.jpg" alt="Wood home decor">
-        <img src="_images/DIY-rustic-window-table-1-2.jpg" alt="DIY rustic window">
-        <img src="_images/hq720.jpg" alt="Crafts" aria-label="Crafts">
-        <img src="_images/Kitchen.jpg" alt="Kitchen">
-        <img src="_images/Contemporary-Craftsman-Custom-Bookcase.png" alt="Bookcase">
-        <img src="_images/image-26.jpeg" alt="26">
-        <img src="_images/beautiful-living-rooms-with-built-in-shelving-4122539-hero-2a0ac4d1d64a4561a22c926d9ba0b0ed.jpg" alt="living room">
-        <br class="clearFix">
-    </main>
+    <div class="gallery-container">
+      <a href="_images/DIY-Wood-Home-Decor-16.jpg" data-lightbox="gallery" data-title="Wood home decor">
+        <img src="_images/DIY-Wood-Home-Decor-16.jpg" alt="Wood home decor" class="gallery-image" />
+      </a>
+      <a href="_images/DIY-rustic-window-table-1-2.jpg" data-lightbox="gallery" data-title="DIY rustic window">
+        <img src="_images/DIY-rustic-window-table-1-2.jpg" alt="DIY rustic window" class="gallery-image" />
+      </a>
+      <a href="_images/hq720.jpg" data-lightbox="gallery" data-title="Crafts">
+        <img src="_images/hq720.jpg" alt="Crafts" class="gallery-image" />
+      </a>
+      <a href="_images/Kitchen.jpg" data-lightbox="gallery" data-title="Kitchen">
+        <img src="_images/Kitchen.jpg" alt="Kitchen" class="gallery-image" />
+      </a>
+      <a href="_images/Contemporary-Craftsman-Custom-Bookcase.png" data-lightbox="gallery" data-title="Bookcase">
+        <img src="_images/Contemporary-Craftsman-Custom-Bookcase.png" alt="Bookcase" class="gallery-image" />
+      </a>
+      <a href="_images/image-26.jpeg" data-lightbox="gallery" data-title="Home repairs">
+        <img src="_images/image-26.jpeg" alt="Home repairs" class="gallery-image" />
+      </a>
+      <a href="_images/beautiful-living-rooms-with-built-in-shelving-4122539-hero-2a0ac4d1d64a4561a22c926d9ba0b0ed.jpg"
+        data-lightbox="gallery" data-title="Living room">
+        <img src="_images/beautiful-living-rooms-with-built-in-shelving-4122539-hero-2a0ac4d1d64a4561a22c926d9ba0b0ed.jpg"
+          alt="Living room" class="gallery-image" />
+      </a>
+    </div>
+    <br class="clearFix" />
+  </main>
+    <footer>
+        <p>Browse our gallery to see the craftsmanship behind every project.</p>
+        <nav>
+            <!-- Navigation menu -->
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li class="currentPage">Gallery</li>
+                <li><a href="quote.html">Quote</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </footer>
+    <!-- Lightbox JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+
+  <!-- JavaScript Enhancements -->
+  <script>
+    // Fade-in animation on scroll
+    window.addEventListener("scroll", () => {
+      document.querySelectorAll(".gallery-image").forEach(img => {
+        if (img.getBoundingClientRect().top < window.innerHeight) {
+          img.classList.add("visible");
+        }
+      });
+    });
+
+    // Search filter
+    document.getElementById("searchInput").addEventListener("keyup", function () {
+      const filter = this.value.toLowerCase();
+      document.querySelectorAll(".gallery-container a").forEach(link => {
+        const altText = link.querySelector("img").alt.toLowerCase();
+        link.style.display = altText.includes(filter) ? "" : "none";
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,47 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Client Testimonials - Woodcraft Solutions</title>
-    <link rel="stylesheet" href="styles.css">
+  <!-- Metadata and SEO -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Testimonials - Woodcraft Solutions</title>
+  <meta name="description" content="Read what our clients say about Woodcraft Solutions' custom furniture and renovation services.">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Optional: Add fade-in animation styles -->
+  <style>
+    .testimonial {
+      opacity: 0;
+      transition: opacity 0.8s ease-in;
+    }
+    .testimonial.visible {
+      opacity: 1;
+    }
+    .accordion {
+      cursor: pointer;
+      background-color: #eee;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      text-align: left;
+      font-size: 1.1em;
+      margin-top: 10px;
+    }
+    .panel {
+      display: none;
+      padding: 10px;
+      background-color: #f9f9f9;
+    }
+  </style>
 </head>
+
 <body>
+  <!-- Header section with logo and navigation -->
   <header>
-    <img src="_images/Elegant Woodworking Logo with Craft Tools (1).png" alt="Wood Craft Solution Logo">
+    <img src="_images/Elegant Woodworking Logo with Craft Tools (1).png" alt="Woodcraft Solutions Logo">
     <nav id="toplinks">
-        <ul>
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="services.html">Service</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="quote.html">quote</a></li>
-            <li class="currentPage">Testimonials</li>
-            <li><a href="contact.html">Content Us</a></li>
-        </ul>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="quote.html">Quote</a></li>
+        <li class="currentPage">Testimonials</li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
     </nav>
-  </header> 
-  
+  </header>
+
+  <!-- Main content: Client testimonials -->
   <main>
     <h1>What Our Clients Say</h1>
 
-    <h2><li>Sarah M.</li></h2>
-    <img src="_images/Kitchen.jpg" alt="Kitchen">
-    <p>“Woodcraft Solutions completely transformed our kitchen with beautiful custom cabinetry. Their attention to detail and professionalism made the process easy and enjoyable.”</p>
-        
+    <!-- Search bar for filtering testimonials -->
+    <input type="text" id="searchInput" placeholder="Search testimonials..." style="width:100%; padding:8px; margin-bottom:20px;">
 
-    <h2><li>James T.</li></h2>
-    <img src="_images/Contemporary-Craftsman-Custom-Bookcase.png" alt="Bookcase">
-    <p>“The custom bookshelves they built for my study are beyond perfect. Solid craftsmanship, great communication, and delivered right on time.”</p>
-        
-    <h2><li>Priya N.</li></h2>
-    <img src="_images/image-26.jpeg" alt="26">
-    <p>“Highly recommend! We had several home repairs done and every single one was finished with care and quality. You can tell they love what they do.”</p>
-        
-    <h2><li>David K.</li></h2>
-    <img src="_images/beautiful-living-rooms-with-built-in-shelving-4122539-hero-2a0ac4d1d64a4561a22c926d9ba0b0ed.jpg" alt="living room">
-    <p>“From the first call to the final coat of paint, the team at Woodcraft Solutions was amazing. Our living room renovation looks stunning!”</p>
+    <!-- Testimonial: Sarah M. -->
+    <button class="accordion">Sarah M.</button>
+    <div class="panel testimonial">
+      <img src="_images/Kitchen.jpg" alt="Custom kitchen cabinetry">
+      <p>“Woodcraft Solutions completely transformed our kitchen with beautiful custom cabinetry. Their attention to detail and professionalism made the process easy and enjoyable.”</p>
+    </div>
+
+    <!-- Testimonial: James T. -->
+    <button class="accordion">James T.</button>
+    <div class="panel testimonial">
+      <img src="_images/Contemporary-Craftsman-Custom-Bookcase.png" alt="Custom bookcase">
+      <p>“The custom bookshelves they built for my study are beyond perfect. Solid craftsmanship, great communication, and delivered right on time.”</p>
+    </div>
+
+    <!-- Testimonial: Priya N. -->
+    <button class="accordion">Priya N.</button>
+    <div class="panel testimonial">
+      <img src="_images/image-26.jpeg" alt="Home repairs">
+      <p>“Highly recommend! We had several home repairs done and every single one was finished with care and quality. You can tell they love what they do.”</p>
+    </div>
+
+    <!-- Testimonial: David K. -->
+    <button class="accordion">David K.</button>
+    <div class="panel testimonial">
+      <img src="_images/beautiful-living-rooms-with-built-in-shelving-4122539-hero-2a0ac4d1d64a4561a22c926d9ba0b0ed.jpg" alt="Living room renovation">
+      <p>“From the first call to the final coat of paint, the team at Woodcraft Solutions was amazing. Our living room renovation looks stunning!”</p>
+    </div>
+
     <br class="clearFix">
-  </main>  
+  </main>
 
+  <!-- Footer section -->
+  <footer>
+    <p>We value your feedback. Share your experience with Woodcraft Solutions.</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="quote.html">Quote</a></li>
+        <li class="currentPage">Testimonials</li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+  <!-- JavaScript for accordion and search functionality -->
+  <script>
+    // Accordion toggle
+    document.querySelectorAll(".accordion").forEach(button => {
+      button.addEventListener("click", () => {
+        button.classList.toggle("active");
+        const panel = button.nextElementSibling;
+        panel.style.display = panel.style.display === "block" ? "none" : "block";
+      });
+    });
+
+    // Fade-in animation on scroll
+    window.addEventListener("scroll", () => {
+      document.querySelectorAll(".testimonial").forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight) {
+          el.classList.add("visible");
+        }
+      });
+    });
+
+    // Search filter
+    document.getElementById("searchInput").addEventListener("keyup", function () {
+      const filter = this.value.toLowerCase();
+      document.querySelectorAll(".accordion").forEach((btn, index) => {
+        const panel = btn.nextElementSibling;
+        const text = panel.textContent.toLowerCase();
+        const name = btn.textContent.toLowerCase();
+        const match = name.includes(filter) || text.includes(filter);
+        btn.style.display = match ? "" : "none";
+        panel.style.display = match && btn.classList.contains("active") ? "block" : "none";
+      });
+    });
+  </script>
 </body>
+
 </html>

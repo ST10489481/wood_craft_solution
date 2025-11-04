@@ -27,10 +27,23 @@ Renovations
 
 ** 2. Website Goals and Objectives **
 **Goals: **
-Showcase portfolio of past projects 
-Display client testimonials 
-Provide online quote request functionality 
-Key Performance Indicators (KPIs): 
+Goal 1: Showcase and sell custom woodwork and furniture designs.
+Objective 1: Develop a website with an e-commerce section that allows users to browse, select, and purchase custom woodwork and furniture directly online.
+
+Goal 2: Display client testimonials to build trust and credibility.
+Objective 2: Create a dedicated testimonials page featuring client reviews, project images, and ratings to highlight customer satisfaction and craftsmanship quality.
+
+Goal 3: Provide a streamlined way for potential clients to request quotes.
+Objective 3: Implement an interactive quote request form that collects project details, preferred timelines, and contact information for follow-up.
+
+Goal 4: Increase brand visibility and online engagement.
+Objective 4: Optimize the website for search engines (SEO), integrate social media links, and publish blog content showcasing woodworking tips and project stories.
+
+Goal 5: Improve user experience across devices.
+Objective 5: Design a responsive website layout that adapts seamlessly to mobile, tablet, and desktop screens for easy navigation and interaction.
+
+Goal 6: Highlight the company’s services and expertise.
+Objective 6: Build a services page with detailed descriptions, images, and benefits of each offering—such as furniture design, repairs, and full renovations. 
 
 Metric                      Target 
 Monthly visitors            1,000+ 
@@ -54,12 +67,69 @@ Service pages                   Outdated layout
  
 
 **4. Proposed Website Features and Functionality **
-Homepage  
-About Us  
-Services  
-Testimonials 
-Request a Quote  
-Contact Page  
+Common Features Across All Pages
+These elements will appear consistently across all five pages (Home, About, Services, Testimonials, Contact):
+
+**Company Logo:** Positioned in the header for brand identity
+Top-Level Navigation Menu: Easy access to all pages with hover effects and active page highlighting
+Responsive Design: Mobile-friendly layout with adaptive elements for tablets and desktops
+
+**Slogan/Tagline:**
+Displayed prominently on the homepage and footer (e.g., “Craftsmanship You Can Trust”)
+
+**Footer Section:**
+Quick links to all pages
+Social media icons (Facebook, Instagram, Pinterest)
+Copyright notice
+
+**Consistent Typography:** Headings in Playfair Display, body text in Roboto Regular
+Color Scheme: Warm Brown, White, Slate Grey, Black
+SEO Optimization: Meta tags, alt text, and structured data for better search visibility
+Accessibility Features: Alt text for images, keyboard navigation, readable contrast ratios
+ 
+**Homepage**
+ Hero banner with high-quality image and slogan
+Introduction to the business
+Call-to-action buttons (e.g., “Request a Quote”, “View Portfolio”)
+Featured services preview
+Testimonials carousel or preview
+Quick contact snippet in footer
+
+ **About Us Page**
+Company history and mission/vision statements
+Founder’s story and experience
+Team introduction (optional)
+Embedded YouTube video showcasing craftsmanship
+High-resolution images of past projects
+
+**Services Page**
+Detailed list of services with icons or images
+Expandable sections or tabs for each service category
+Call-to-action buttons (e.g., “Get a Quote”, “See Gallery”)
+Testimonials related to specific services
+Downloadable brochure or service catalog (optional)
+
+**Testimonials Page**
+Client reviews with names and project images
+Star ratings or satisfaction indicators
+Filter or sort by service type
+Option to submit a testimonial via form
+Visual layout using cards or grid
+
+**Contact Us Page**
+Rich contact information:
+Physical address
+Email
+Phone number
+Business hours
+Google Maps Embed: Interactive map showing business location
+Google Form or Custom Contact Form:
+Name, email, phone
+Message box
+Service interest dropdown
+Social media links
+Quick quote request button
+Accessibility-friendly layout
 
 **5. Design and User Experience **
 **Colour Scheme:**Warm Brown,white, Slate Grey, Black 
@@ -84,13 +154,7 @@ Image Optimization tools
 
  
 7. **Timeline and Milestones **
-Milestone                   Date (Approximate) 
-Proposal Submission         Week 1 
-Research & Wireframes       Week 2–3 
-Initial Development         Week 4 
-Mid-Development Review      Week 5–6 
-Final Testing & Debugging   Week 7 
-Project Submission          Week 8 
+<img src="_images/timeline.png" alt="Timeline">
 
  **
 8. Budget **
@@ -100,6 +164,42 @@ Hosting                  R1300/year
 Development              R0 
 Maintenance              R2250/year 
 Total                    R3950/year 
+
+## 9.Change log 
+**Part 1**
+Content Expansion & Structure Fixes
+Added missing "main" and "footer" tags to testimonials.html, services.html, and gallery.html
+Inserted closing "/body>" and "/html>" tags in gallery.html
+
+**Expanded homepage content with:**
+Introduction
+,Why Choose Us section
+,Featured Services
+And Call-to-action buttons
+
+**Contact Page Enhancements**
+Added rich contact information (address, email, phone)
+.Embedded Google Maps iframe.Embedded Google Form for quote/contact submissions.Listed business hours
+
+**Quote Page Improvements**
+Structured quotation content with headings and bullet points.Added client acceptance section with signature and date placeholders.Included payment terms and conditions
+
+**Gallery & Testimonials Updates**
+Improved alt text for all images for accessibility and SEO.Added client testimonials with names, images, and feedback.Structured testimonials using "section" tags
+
+**Code Documentation**
+Added HTML comments across all pages to explain each section.Improved readability and maintainability of code
+
+**Content Archiving**
+Saved all website text content in a .txt file and placed it in the _private folder for backup and documentation
+
+**Part 2**
+
+Implement all changes recommended in POE Part 1.
+
+All recommendations given to improve the proposal have have been implemented.
+
+Content coded in some of the footer area.Code is formated,And I Avoid unnecesary whitespace. 
 
  
 Sitemap 

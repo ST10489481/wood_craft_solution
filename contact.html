@@ -1,63 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wood Craft Solution contact us page</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - Woodcraft Solutions</title>
+  <meta name="description" content="Get in touch with Woodcraft Solutions for custom furniture and renovations." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
 </head>
+
 <body>
+    <!-- Header section with logo and navigation -->
+  <header>
+    <img src="_images/Elegant Woodworking Logo with Craft Tools (1).png" alt="Woodcraft Solutions Logo" />
+    <nav id="toplinks">
+        <!-- Navigation menu -->
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="quote.html">Quote</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li class="currentPage">Contact Us</li>
+      </ul>
+    </nav>
+  </header>
 
-    <header>
-        <img src="_images/Elegant Woodworking Logo with Craft Tools (1).png" alt="Wood Craft Solution Logo">
-        <nav id="toplinks">
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Service</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="quote.html">quote</a></li>
-                <li><a href="testimonials.html">Testimonials</a></li>
-                <li class="currentPage">Content Us</li>
-            </ul>
-        </nav>
-    </header>
+  <main>
+    <h1>Operational Hours</h1>
+    <ul>
+      <li><strong>Monday–Friday:</strong> 8 am – 5 pm</li>
+      <li><strong>Saturday:</strong> 8 am – 3 pm</li>
+      <li><strong>Sunday:</strong> 8 am – 10 pm</li>
+      <li><strong>Public Holidays:</strong> 8 am – 12 pm</li>
+    </ul>
 
-    <main>
-        
-        <h1>Operational Hours</h1>
-        <p><strong>Mondays-Friday:</strong> 8 am - 5 pm</p>
-        <p><strong>Saturday:</strong> 8 am - 3 pm</p>
-        <p><strong>Sunday:</strong> 8 am - 10 pm</p>
-        <p><strong>Public Holidays:</strong> 8 am - 12 pm</p>
-        
-        
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3356.6207350238005!2d-97.1508145243395!3d32.722704373686234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864e7ce8c9014505%3A0x7c473c7285d72772!2s1301%20S%20Bowen%20Rd%20STE%20450%2C%20Arlington%2C%20TX%2076013%2C%20USA!5e0!3m2!1sen!2sza!4v1755244073764!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <br class="clearFix">
-    </main>
+    <h2>Find Us on the Map</h2>
+    <div id="leafletMap" style="height: 400px; width: 100%; margin-bottom: 20px;"></div>
 
-    <footer>
-        <nav>
-            <ul>
-                <h1>Content Us Page</h1>
-                <p><strong>Physical Addeess:</strong>1301, South Bowen Road Suite 450 Arlington, TX 76013 United States </p>
-                <p><strong>Email:</strong>dunamsi_ai@it.co.za</p>
-                <p><strong>Content:</strong>078 9412 432</p>
-                
-                
-                
-                
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Service</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="quote.html">quote</a></li>
-                <li><a href="testimonials.html">Testimonials</a></li>
-                <li class="currentPage">Content Us</li>
-                
-            </ul>
-        </nav>
-    </footer>
-    
+    <h2>Send Us a Message</h2>
+    <iframe src="https://forms.gle/Qtn3jBamAsmEwQM18"
+      width="640" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+      <h2>Send Us a Message</h2>
+<form action="submit-form.php" method="POST" style="max-width: 600px;">
+  <!-- Full Name -->
+  <label for="name">Full Name<span style="color: red;">*</span></label><br />
+  <input type="text" id="name" name="name" required /><br /><br />
+
+  <!-- Email Address -->
+  <label for="email">Email Address<span style="color: red;">*</span></label><br />
+  <input type="email" id="email" name="email" required /><br /><br />
+
+  <!-- Phone Number -->
+  <label for="phone">Phone Number<span style="color: red;">*</span></label><br />
+  <input type="tel" id="phone" name="phone" required /><br /><br />
+
+  <!-- Type of Enquiry -->
+  <label for="enquiry">Type of Enquiry<span style="color: red;">*</span></label><br />
+  <select id="enquiry" name="enquiry" required>
+    <option value="">-- Please choose an option --</option>
+    <option value="general">General Contact</option>
+    <option value="service">Service Enquiry</option>
+    <option value="quote">Product Quote</option>
+    <option value="sponsorship">Volunteer/Sponsorship Interest</option>
+  </select><br /><br />
+
+  <!-- Services of Interest -->
+  <label>Services of Interest</label><br />
+  <input type="checkbox" name="services[]" value="Custom Furniture" /> Custom Furniture<br />
+  <input type="checkbox" name="services[]" value="Wood Repairs" /> Wood Repairs<br />
+  <input type="checkbox" name="services[]" value="Home Renovation" /> Full Home Renovation<br />
+  <input type="checkbox" name="services[]" value="Premium Finishes" /> Premium Finishes<br />
+  <input type="checkbox" name="services[]" value="Custom Woodworking" /> Custom Woodworking<br /><br />
+
+  <!-- Preferred Contact Method -->
+  <label>Preferred Contact Method</label><br />
+  <input type="radio" name="contact_method" value="Email" checked /> Email<br />
+  <input type="radio" name="contact_method" value="Phone" /> Phone<br />
+  <input type="radio" name="contact_method" value="WhatsApp" /> WhatsApp<br /><br />
+
+  <!-- Message -->
+  <label for="message">Message<span style="color: red;">*</span></label><br />
+  <textarea id="message" name="message" rows="5" required></textarea><br /><br />
+
+  <!-- Submit Button -->
+  <button type="submit">Submit</button>
+</form>
+
+  </main>
+
+  <footer>
+    <h2>Contact Information</h2>
+    <p><strong>Address:</strong> 1301 South Bowen Road, Suite 450, Arlington, TX 76013</p>
+    <p><strong>Email:</strong> dunamsi_ai@it.co.za</p>
+    <p><strong>Phone:</strong> 078 9412 432</p>
+    <nav>
+        <!-- Navigation menu -->
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="quote.html">Quote</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li class="currentPage">Contact Us</li>
+      </ul>
+    </nav>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+  <script>
+    const map = L.map('leafletMap').setView([32.7227, -97.1508], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+    L.marker([32.7227, -97.1508]).addTo(map)
+      .bindPopup('<strong>Woodcraft Solutions</strong><br>1301 S Bowen Rd, Arlington, TX')
+      .openPopup();
+    L.Control.geocoder().addTo(map);
+  </script>
 </body>
+
 </html>
